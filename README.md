@@ -87,8 +87,8 @@ This is what we do will next.
 To solve the problem mentionned earlier, it is possisble to use a Webhook that will trigger the external application before creating or rejecting the POD.
 I have already written an article on Kubernetes Webhook, kindly refer to this article  https://github.com/zoundibona/K8sWebhook
 
-The Webhook that returns the kubesec score is written in Python Flask, I have used kubesec available at https://v2.kubesec.io/scan instead of running it locally <br>
-the below command will send the request to kubesec to check the manifest file <br>
+The Webhook that returns the kubesec score is written in Python Flask, I have used kubesec available at https://v2.kubesec.io/scan instead of running it locally. <br>
+The below command will send the request to kubesec to check the manifest file <br>
 
      curl -sSX POST --data-binary  @k8filename  https://v2.kubesec.io/scan 
 
