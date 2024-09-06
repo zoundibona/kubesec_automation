@@ -151,6 +151,7 @@ $ **kubectl apply -f testpod.yaml**  <br>
     pod/pod created  <br>
 
 Let us if the POD has been created  <br>
+
 $ **kubectl get pods**  <br>
 
     NAME   READY   STATUS    RESTARTS   AGE
