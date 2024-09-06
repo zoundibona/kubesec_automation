@@ -92,6 +92,31 @@ the below command will send the request to kubesec to check the manifest file <b
 
      curl -sSX POST --data-binary  @k8filename  https://v2.kubesec.io/scan 
 
+# DEMO
+
+Let us below manifest file
+
+        apiVersion: v1
+        kind: Pod
+        metadata:
+          creationTimestamp: null
+          labels:
+            run: pod
+          name: pod
+        spec:
+          containers:
+          - image: nginx
+            name: pod
+            resources: {}
+            securityContext:
+              privileged: true
+          dnsPolicy: ClusterFirst
+          restartPolicy: Always
+        status: {}
+
+As you can privileged is set to true,
+Let us try to create the manifest file
+
 
 
 
