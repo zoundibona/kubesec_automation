@@ -32,7 +32,8 @@ Let us assume that your manifest K8s.yaml is as below :
 
 
 To scan the manifest file, you can run the below command :   <br>
-        **kubesec scan K8s.yaml**  <br>
+
+**kubesec scan K8s.yaml**  <br>
 
 This will return below output
 
@@ -70,9 +71,9 @@ This will return below output
         ******TRUNCATED *******
     
 
-In the returned output there is a field called score, if the score is greater or equal than 0 then the file has passed the test, otherwise it has failed due to securities configurations
+In the returned output there is a field called score, if the score is greater or equal than 0 then the file has passed the test, otherwise it has failed due to securities configurations.
 <br>
-For example configuration like securityContext: Privileged: True will likely make the score to be below 0 like in this case.
+For example, configuration like securityContext: Privileged: True will likely make the score to be below 0 like in this case.
 
 
 # LIMITATION OF USING KUBESEC VIA CLI
@@ -161,7 +162,7 @@ The POD has been created as the score is greater or equal than 0
 
 # CONCLUSION
 
-Kubesec is great tool to scan manifest file, but combining Webhook and kubesec gives an advantage as it allows the Webhook to check the manifest file before returning a response to the API server.
+Kubesec is great tool to scan manifest files, but combining Webhook and kubesec gives an advantage as it allows the Webhook to check the manifest file before returning a response to the API server.
 
 
 
