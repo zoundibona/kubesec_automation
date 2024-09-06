@@ -31,8 +31,9 @@ Let us assume that your manifest K8s.yaml is as below :
 
 
 
-To scan the manifest file, you can will run :
-$ kubesec scan K8s.yaml
+To scan the manifest file, you can will run the below command :   <br>
+kubesec scan K8s.yaml  <br>
+
 This will return below output
 
       [
@@ -69,11 +70,20 @@ This will return below output
         ******TRUNCATED *******
     
 
-The output returns a field called score, if the score is greater or equal to 0 then the file has passed the test otherwise it has failed due to security configuration
-For example configuration like securityContext: Privileged: True will likely make the score to be below 0
+The output returns a field called score, if the score is greater or equal than 0 then the file has passed the test, otherwise it has failed due to securities configurations
+<br>
+For example configuration like securityContext: Privileged: True will likely make the score to be below 0 like in this case.
 
 
-# HOW TO USE WEBKOOK AND KUBESEC
+# LIMITATION OF USING KUBESEC VIA CLI
+
+Up to now, we can see kubesec has to be runned manually before deploying to Kubernetes cluster. 
+What if the Kube API server in charge of creating the POD was able to trigger an external application that would check the score of the manifest file ? 
+If the returned score is below 0 the POD is creation is rejected, otherwise it allows the POD to be created.
+
+# WEBHOOK AND KUBESEC
+To solve the problem mentionned earlier, it is possisble to use a Webhook that will trigger the external application before creating or rejected the POD.
+I have already written an article of Kubernetes Webhook, kindly refer to this article  https://github.com/zoundibona/K8sWebhook
 
 
 
