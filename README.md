@@ -2,7 +2,7 @@
 
 Kubesec is a tool used to scan kubernetes manifest files in order to detect security issues configurations.
 There are severals ways to run kubesec.
-It can be used locally by installing the software or used remotely via this link https://v2.kubesec.io/scan
+It can be used locally by installing the software or used remotely via this link https://v2.kubesec.io/scan <br>
 For the local installations, you can use :
 
 * binary
