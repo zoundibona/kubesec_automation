@@ -84,7 +84,7 @@ If the returned score is below 0 the POD creation is rejected, otherwise it allo
 This is what we do will next. 
 
 # WEBHOOK AND KUBESEC
-To solve the problem mentionned earlier, it is possisble to use a Webhook that will trigger the external application before creating or rejected the POD.
+To solve the problem mentionned earlier, it is possisble to use a Webhook that will trigger the external application before creating or rejecting the POD.
 I have already written an article on Kubernetes Webhook, kindly refer to this article  https://github.com/zoundibona/K8sWebhook
 
 The Webhook that returns the kubesec score is written in Python Flask, I have used kubesec available at https://v2.kubesec.io/scan instead of running it locally <br>
