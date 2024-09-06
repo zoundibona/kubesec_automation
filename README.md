@@ -115,10 +115,44 @@ Let us below manifest file
         status: {}
 
 As you can privileged is set to true,
-Let us try to create the manifest file
+Let us try to create the manifest file <br>
+
+**$ kubectl apply -f testpod.yaml** <br>
+
+Output returned 
+
+    Error from server: error when creating "testpod.yaml": admission webhook "validate-webhook.test.com" denied the request: SCORE REPORTED BY KUBESEC OF THE MANIFEST FILE BELOW 0
+
+We can see that the Webhook returned a message to API server that containing **"SCORE REPORTED BY KUBESEC OF THE MANIFEST FILE BELOW 0"**, this is because of securityContext configuration. <br>
+
+Now let us modify the manifest file by changing **privileged value to false**
+
+        apiVersion: v1
+        kind: Pod
+        metadata:
+          creationTimestamp: null
+          labels:
+            run: pod
+          name: pod
+        spec:
+          containers:
+          - image: nginx
+            name: pod
+            resources: {}
+            securityContext:
+              privileged: false
+          dnsPolicy: ClusterFirst
+          restartPolicy: Always
+        status: {}
 
 
+Let us apply the modified manifest file
 
+$ **kubectl apply -f testpod.yaml**  <br>
+$ **kubectl get pods**  <br>
+
+    NAME   READY   STATUS    RESTARTS   AGE
+    pod    1/1     Running   0          6s
 
 
 
