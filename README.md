@@ -80,8 +80,8 @@ For example, configuration like securityContext: Privileged: True will likely ma
 
 Up to now, we can see that kubesec has to be run manually before deploying to Kubernetes cluster. 
 What if the Kube API server in charge of creating the POD was able to trigger an external application that would check the score of the manifest file ? 
-If the returned score is below 0 the POD is creation is rejected, otherwise it allows the POD to be created. <br>
-This what we will next. 
+If the returned score is below 0 the POD creation is rejected, otherwise it allows the POD to be created. <br>
+This is what we do will next. 
 
 # WEBHOOK AND KUBESEC
 To solve the problem mentionned earlier, it is possisble to use a Webhook that will trigger the external application before creating or rejected the POD.
